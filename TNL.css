@@ -1,0 +1,220 @@
+body {
+    margin:0;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Blurred background layer */
+.body-blur-bg {
+    position: fixed;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('./media/TNL/background.png') center center/cover no-repeat;
+    filter: blur(24px) brightness(0.9);
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* High quality background layer */
+.body-hq-bg {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('./media/TNL/background.png') center center/contain no-repeat;
+    background-attachment: fixed;
+    pointer-events: none;
+}
+
+/* Top banner */
+.top-banner {
+    background: #c00;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 2em;
+    height: 80px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%; /* Ensure container fills banner height */
+}
+
+.logo {
+    height: 100%; /* Fill the container height */
+    width: auto;
+    display: block;
+    /* Remove any extra margin/padding if present */
+    margin: 0;
+    padding: 0;
+}
+
+.top-nav {
+    display: flex;
+    gap: 2em;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: text-decoration 0.2s;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Main content with background image */
+.main-content {
+    min-height: 80vh;
+    padding: 2em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    position: relative;
+    z-index: 1;
+    background: none;
+}
+
+/* Members section */
+.members-section {
+    background: rgba(255,255,255,0.50);
+    border-radius: 12px;
+    padding: 2em;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+.members-section h2 {
+    margin-bottom: 1em;
+    color: #c00;
+    text-align: center;
+}
+
+.members-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+
+.member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1em;
+    width: 140px;
+    text-decoration: none;
+    color: #222;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.member-card:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 6px 20px rgba(200,0,0,0.13);
+}
+
+.member-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.7em;
+    border: 3px solid #c00;
+}
+
+.member-name {
+    font-weight: bold;
+    font-size: 1.05em;
+    text-align: center;
+}
+
+/* Sponsors section */
+.sponsors-section {
+    background: rgba(255,255,255,0.50);
+    border-radius: 12px;
+    padding: 2em;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+.sponsors-section h2 {
+    margin-bottom: 1em;
+    color: #c00;
+    text-align: center;
+}
+
+.sponsors-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+
+.sponsors-list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sponsor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 1em;
+    width: 140px;
+    cursor: pointer;
+    transition: box-shadow 0.15s, transform 0.15s;
+}
+
+.sponsor-card:hover {
+    box-shadow: 0 6px 20px rgba(200,0,0,0.13);
+    transform: translateY(-4px) scale(1.04);
+}
+
+.sponsor-img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    margin-bottom: 0.7em;
+}
+
+.sponsor-name {
+    font-weight: bold;
+    font-size: 1.05em;
+    text-align: center;
+}
+
+/* Footer note */
+.footer-note {
+    background: #fff;
+    color: #c00;
+    text-align: center;
+    padding: 1em 0;
+    font-size: 0.95em;
+    border-top: 1px solid #eee;
+}
+
+.footer-note a {
+    color: #c00;
+    text-decoration: underline;
+}
