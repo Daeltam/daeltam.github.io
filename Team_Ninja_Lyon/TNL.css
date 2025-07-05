@@ -61,6 +61,7 @@ body {
 .top-nav {
     display: flex;
     gap: 2em;
+    position: relative;
 }
 
 .nav-link {
@@ -68,11 +69,65 @@ body {
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1em;
-    transition: text-decoration 0.2s;
+    position: relative;
+    padding: 0.5em 0;
+    transition: color 0.15s, background 0.15s;
 }
 
-.nav-link:hover {
-    text-decoration: underline;
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #fff;
+    min-width: 180px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    z-index: 10;
+    border-radius: 8px;
+    top: 2.5em;
+    left: 0;
+    padding: 0.5em 0;
+}
+
+.dropdown-content a {
+    color: #c00;
+    padding: 0.7em 1.2em;
+    text-decoration: none;
+    display: block;
+    font-weight: normal;
+    font-size: 1em;
+    border-radius: 0;
+    background: none;
+    transition: background 0.15s;
+}
+
+.dropdown-content a:hover {
+    background: #f8eaea;
+    color: #a00;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown .nav-link {
+    /* visually indicate dropdown */
+    position: relative;
+}
+
+.dropdown .nav-link::after {
+    content: " ▼";
+    font-size: 0.7em;
+    color: #fff;
+    margin-left: 0.2em;
+    vertical-align: middle;
 }
 
 /* Main content with background image */
@@ -119,10 +174,14 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     padding: 1em;
-    width: 140px;
+    width: 140px; /* back to original width */
     text-decoration: none;
     color: #222;
     transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.palmares-card {
+    width: 260px;
 }
 
 .member-card:hover {
@@ -322,4 +381,12 @@ body {
     width: 100%;
     min-height: 120px;
     /* Add more styling as needed */
+}
+
+/* Make palmarès lists less indented */
+.palmares-list {
+    padding-left: 1em !important;
+    margin-left: 0 !important;
+    width: 100%;
+    text-align: left;
 }
