@@ -1,0 +1,430 @@
+/* Import police adaptée aux dyslexiques */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap');
+
+/* ==================== VARIABLES CSS ==================== */
+:root {
+    /* Couleurs principales */
+    --rouge-principal: #c41e3a;
+    --rouge-fonce: #8b0000;
+    --or-accent: #d4af37;
+    
+    /* Thème sombre (par défaut) */
+    --bg-fonce: #1a1a1a;
+    --bg-moyen: #2d2d2d;
+    --bg-clair: #4a4a4a;
+    --texte-principal: #f0f0f0;
+    --texte-blanc: #ffffff;
+}
+
+/* Thème clair */
+body:has(#theme-toggle:checked) {
+    --bg-fonce: #ffffff;
+    --bg-moyen: #f5f5f5;
+    --bg-clair: #e8e8e8;
+    --texte-principal: #2d2d2d;
+    --texte-blanc: #1a1a1a;
+    --or-accent: #b8860b;
+}
+
+/* ==================== STYLES GLOBAUX ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend', 'Comic Sans MS', Arial, sans-serif;
+    background-color: var(--bg-fonce);
+    color: var(--texte-principal);
+    line-height: 1.8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background: linear-gradient(135deg, var(--rouge-fonce) 0%, var(--rouge-principal) 100%);
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.server-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid var(--or-accent);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--texte-blanc);
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+    width: 100%;
+}
+
+section {
+    background-color: var(--bg-moyen);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--rouge-principal);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+section h2 {
+    color: var(--or-accent);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--rouge-principal);
+    padding-bottom: 0.5rem;
+}
+
+.presentation p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.join-button {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.discord-link {
+    display: inline-block;
+    background-color: var(--rouge-principal);
+    color: var(--texte-blanc);
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.discord-link:hover {
+    background-color: var(--rouge-fonce);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.intro-ecrits {
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--bg-clair);
+    border-left: 3px solid var(--or-accent);
+    border-radius: 4px;
+}
+
+.ecrits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.ecrit-card {
+    background-color: var(--bg-clair);
+    padding: 2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.ecrit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--rouge-principal);
+    box-shadow: 0 8px 16px rgba(196, 30, 58, 0.2);
+}
+
+.ecrit-card h3 {
+    color: var(--or-accent);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.ecrit-card p {
+    margin-bottom: 1.5rem;
+    color: var(--texte-principal);
+}
+
+.read-link {
+    display: inline-block;
+    color: var(--rouge-principal);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.read-link:hover {
+    color: var(--or-accent);
+    padding-left: 10px;
+}
+
+footer {
+    background-color: var(--bg-moyen);
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+    border-top: 3px solid var(--rouge-principal);
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer a {
+    color: var(--rouge-principal);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--or-accent);
+}
+
+/* Style pour les pages d'écrits */
+.ecrit-page {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.ecrit-page header {
+    background: linear-gradient(135deg, var(--bg-moyen) 0%, var(--bg-clair) 100%);
+}
+
+.ecrit-page h1 {
+    font-size: 2rem;
+    color: var(--or-accent);
+    text-align: center;
+}
+
+.gist-container {
+    margin: 2rem 0;
+    padding: 0;
+    background-color: var(--bg-moyen);
+    border-radius: 8px;
+    border-left: 5px solid var(--rouge-principal);
+    overflow: hidden;
+}
+
+/* Styles du gist */
+.gist-container .gist {
+    max-width: 100% !important;
+}
+
+.gist-container .gist-file {
+    border: none !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
+.gist-container .gist-data {
+    background-color: var(--bg-fonce) !important;
+    border: none !important;
+}
+
+.gist-container .blob-wrapper {
+    background-color: var(--bg-fonce) !important;
+}
+
+/* Texte du code - Force tout en blanc/noir selon le thème */
+.gist-container .blob-code,
+.gist-container .blob-num,
+.gist-container td,
+.gist-container th,
+.gist-container span {
+    background-color: var(--bg-fonce) !important;
+    color: var(--texte-blanc) !important;
+    font-family: 'Lexend', 'Consolas', 'Monaco', monospace !important;
+}
+
+.gist-container .highlight {
+    background-color: var(--bg-fonce) !important;
+    color: var(--texte-blanc) !important;
+}
+
+/* Texte markdown dans les Gists (thème sombre) */
+.gist .markdown-body {
+    color: #fefefe !important;
+}
+
+/* Meta du gist */
+.gist-container .gist-meta {
+    background-color: var(--bg-moyen) !important;
+    color: var(--texte-principal) !important;
+    border-top: 1px solid var(--bg-clair) !important;
+}
+
+.gist-container .gist-meta a {
+    color: var(--rouge-principal) !important;
+}
+
+.gist-container .gist-meta a:hover {
+    color: var(--or-accent) !important;
+}
+
+/* Toggle de thème sombre/clair */
+#theme-toggle {
+    display: none;
+}
+
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: var(--bg-moyen);
+    border-radius: 30px;
+    padding: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid var(--rouge-principal);
+}
+
+.theme-switch:hover {
+    box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+    transform: translateY(-2px);
+}
+
+.theme-switch-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px;
+    color: var(--texte-principal);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.theme-icon {
+    font-size: 1.2rem;
+}
+
+/* Appliquer le thème clair quand la checkbox est cochée */
+body:has(#theme-toggle:checked) {
+    --bg-fonce: #ffffff;
+    --bg-moyen: #f5f5f5;
+    --bg-clair: #e8e8e8;
+    --texte-principal: #2d2d2d;
+    --texte-blanc: #1a1a1a;
+    --or-accent: #b8860b;
+}
+
+/* Ajuster les éléments spécifiques en mode clair */
+body:has(#theme-toggle:checked) .gist-container .gist-data,
+body:has(#theme-toggle:checked) .gist-container .blob-wrapper,
+body:has(#theme-toggle:checked) .gist-container .blob-code,
+body:has(#theme-toggle:checked) .gist-container .blob-num {
+    background-color: #ffffff !important;
+    color: #2d2d2d !important;
+}
+
+body:has(#theme-toggle:checked) .gist-container .highlight,
+body:has(#theme-toggle:checked) .gist-container .blob-wrapper table,
+body:has(#theme-toggle:checked) .gist-container td {
+    color: #2d2d2d !important;
+}
+
+/* Texte markdown dans les Gists (thème clair) */
+body:has(#theme-toggle:checked) .gist .markdown-body {
+    color: #2d2d2d !important;
+}
+
+/* Animation du toggle */
+.theme-switch::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--rouge-principal);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+body:has(#theme-toggle:checked) .theme-switch::before {
+    left: calc(100% - 40px);
+    background-color: var(--or-accent);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--rouge-principal);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--or-accent);
+    padding-left: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .logo-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .server-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    section {
+        padding: 1.5rem;
+    }
+    
+    .ecrits-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .theme-switch {
+        top: 10px;
+        right: 10px;
+        padding: 4px;
+    }
+    
+    .theme-switch-label {
+        padding: 3px 10px;
+        font-size: 0.8rem;
+    }
+}
